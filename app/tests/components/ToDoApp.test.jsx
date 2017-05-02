@@ -19,5 +19,20 @@ describe('ToDoApp', () => {
 		todoApp.handleAddTodo(todoText);
 
 		expect(todoApp.state.todos[0].text).toBe(todoText);
-	})
+	});
+
+	it('should update status when checkbox is toggled', () =>{
+		var todoData = {
+			id: 0,
+			text: 'text',
+			completed: false
+		};
+		var todoApp = TestUtils.renderIntoDocument(<ToDoApp/>);
+
+		todoApp.setState({todos: [todoData]});
+
+		expect(todoApp.state.todos[0].completed).toBe(false);
+		todoApp.handleToggle(0);
+		expect(todoApp.state.todos[0].completed).toBe(true);
+	});
 });
