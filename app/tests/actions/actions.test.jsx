@@ -35,4 +35,22 @@ describe('Actions', () => {
 		var res = actions.toggleShowCompleted();
 		expect(res).toEqual(action);
 	});
+
+	it('should generate ADD_TODOS action', () => {
+		var todos = [
+			{
+				id: 322,
+				text: 'do it',
+				completed: false,
+				createdAt: 444,
+				completedAt: 5000
+			}
+		];
+		var action = {
+			type: 'ADD_TODOS',
+			todos
+		}
+		var res = actions.addTodos(todos);
+		expect(res).toEqual(action);
+	});
 });
