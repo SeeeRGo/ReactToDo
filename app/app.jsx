@@ -2,6 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 var {Route, Router, IndexRoute, hashHistory} = require('react-router');
+var {Provider} = require('react-redux');
 var ToDoApp = require('ToDoApp');
 
 var actions = require('actions');
@@ -21,7 +22,9 @@ $(document).foundation();
 require('style!css!sass!appStyles');
 
 ReactDOM.render(
-		<ToDoApp/>,
+		<Provider store={store}>
+			<ToDoApp/>
+		</Provider>,
 		document.getElementById("app")
 	);
 
