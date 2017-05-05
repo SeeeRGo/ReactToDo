@@ -2,8 +2,9 @@ var React = require('react');
 var uuid = require('node-uuid');
 var moment = require('moment');
 
-var ToDoList = require('ToDoList');
-var AddToDo = require('AddToDo');
+//var ToDoList = require('ToDoList');
+import ToDoList from 'ToDoList';
+import AddToDo from 'AddToDo';
 var ToDoSearch = require('ToDoSearch');
 var ToDoAPI = require('ToDoAPI');
 
@@ -19,20 +20,7 @@ var ToDoApp = React.createClass({
 	componentDidUpdate(prevProps, prevState) {
 		ToDoAPI.setTodos(this.state.todos);
 	},
-	handleAddTodo: function(newTodo){
-		this.setState({
-			todos: [
-				...this.state.todos, 
-				{
-					id: uuid(), 
-					text: newTodo,
-					completed: false,
-					createdAt: moment().unix(),
-					completedAt: undefined
-				}
-				]
-		});
-	},
+	
 	handleSearch: function(showCompleted, searchText){
 		this.setState({
 			showCompleted: showCompleted,

@@ -4,7 +4,7 @@ var moment = require('moment');
 
 var actions = require('actions')
 
-var ToDo = React.createClass({	
+export var ToDo = React.createClass({	
 	render: function(){
 		var {id, text, completed, createdAt, completedAt, dispatch} = this.props;
 		var todoClassName = completed ? 'todo todo__completed' : 'todo'
@@ -28,5 +28,4 @@ var ToDo = React.createClass({
 			)
 	}
 });
-
-module.exports = connect()(ToDo);
+export default connect()(ToDo); 
