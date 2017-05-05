@@ -12,9 +12,6 @@ store.subscribe(() => {
 	console.log('New state', store.getState());	
 });
 
-store.dispatch(actions.addToDo('Kill myself'));
-store.dispatch(actions.setSearchText('ill'));
-store.dispatch(actions.toggleShowCompleted());
 //Load foundation
 require('style!css!foundation-sites/dist/css/foundation.min.css');
 $(document).foundation();

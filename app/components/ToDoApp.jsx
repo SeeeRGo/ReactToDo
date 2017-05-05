@@ -5,7 +5,7 @@ var moment = require('moment');
 //var ToDoList = require('ToDoList');
 import ToDoList from 'ToDoList';
 import AddToDo from 'AddToDo';
-var ToDoSearch = require('ToDoSearch');
+import ToDoSearch from 'ToDoSearch';
 var ToDoAPI = require('ToDoAPI');
 
 
