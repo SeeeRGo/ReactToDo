@@ -2,7 +2,7 @@ var React = require('react');
 var {connect} = require('react-redux');
 var moment = require('moment');
 
-var actions = require('actions')
+var actions = require('actions');
 
 export var ToDo = React.createClass({	
 	render: function(){
@@ -18,7 +18,7 @@ export var ToDo = React.createClass({
 		return (
 			<div className={todoClassName} onClick={() => {
 				//this.props.onToggle(id);
-				dispatch(actions.toggleToDo(id));
+				dispatch(actions.startToggleTodo(id, !completed));
 
 			}}>
 				<div><input type="checkbox" checked={completed}/></div>
